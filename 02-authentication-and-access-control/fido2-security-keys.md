@@ -67,7 +67,7 @@ Após a propagação da política pelo administrador, o fluxo de registro self-s
 8. Após o provisionamento bem-sucedido, localize a opção **Alterar** (*Change*) ao lado do método de entrada padrão no topo do Painel de Conteúdo Principal.
 9. Modifique o método de autenticação padrão da conta para **Autenticação baseada em aplicativo ou token de hardware - código**, garantindo que as próximas solicitações de logon exijam prioritariamente o fator de segurança físico.
 
-![Portal de Informações de Segurança do Usuário](registro-token-usuario.png)
+![Portal de Informações de Segurança do Usuário](./images/registro-token-usuario.png)
 *Legenda: Interface do portal MySignIns destacando o menu Informações de segurança e o botão de inclusão de novos métodos de autenticação corporativos.*
 
 
