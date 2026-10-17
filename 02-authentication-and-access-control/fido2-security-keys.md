@@ -50,3 +50,20 @@ Posteriormente, utilizou-se a opção **Adicionar perfil** para estabelecer as r
 
 ![Configurações Avançadas do Perfil FIDO2](./images/perfil-fido2.png)
 *Legenda: Detalhes das restrições e propriedades de hardware aplicadas no perfil de chaves corporativas.*
+
+---
+
+## 5. Registro do Método e Experiência do Usuário Final (Self-Service)
+
+Após a propagação da política pelo administrador, o fluxo de registro self-service foi validado simulando o comportamento de provisionamento por parte do colaborador. O processo de vinculação do dispositivo segue o passo a passo técnico detalhado abaixo:
+
+1. O colaborador acessa o portal de gerenciamento de segurança através do endereço `https://mysignins.microsoft.com/`.
+2. No **Menu Lateral**, navegue até a opção **Informações de segurança** (*Security info*).
+3. No **Painel de Conteúdo Principal** (*Workspace*), clique no botão **Adicionar método de entrada** (*Add sign-in method*).
+4. Na janela suspensa que for exibida, selecione a opção **Token de hardware** (*Hardware token*) e clique em **Avançar** (*Next*).
+5. Na tela seguinte, o assistente solicitará os dados de identificação do dispositivo; digite o **Número de série** do token físico e clique em **Avançar**.
+6. Insira um nome descritivo para o dispositivo (ex: `Token Corporativo MFA`) para facilitar auditorias futuras e clique em **Avançar**.
+7. Na etapa de validação criptográfica, pressione o botão físico do token para gerar o código temporário de uso único (OTP), insira os dígitos gerados no campo correspondente na tela e clique em **Avançar** para concluir a configuração.
+8. Após o provisionamento bem-sucedido, localize a opção **Alterar** (*Change*) ao lado do método de entrada padrão no topo do Painel de Conteúdo Principal.
+9. Modifique o método de autenticação padrão da conta para **Autenticação baseada em aplicativo ou token de hardware - código**, garantindo que as próximas solicitações de logon exijam prioritariamente o fator de segurança físico.
+
