@@ -13,7 +13,7 @@ O gerenciamento desta credencial é realizado centralizadamente no painel de **P
 
 Para iniciar o processo de implementação de credenciais modernas, deve-se acessar o módulo centralizado de gerenciamento de políticas do locatário. A navegação é realizada diretamente através do Centro de Administração do Microsoft Entra seguindo a sequência de menus abaixo:
 
-1. Acesse o **Centro de administração do Microsoft Entra** (`https://microsoft.com`).
+1. Acesse o **Centro de administração do Microsoft Entra** (`https://entra.microsoft.com`).
 2. No **Menu Lateral**, selecione a opção **Entra ID**.
 3. Na listagem do diretório, localize e clique em **Métodos de autenticação**.
 4. No **Menu de Navegação Secundária** (painel interno à esquerda), selecione a opção **Políticas**.
