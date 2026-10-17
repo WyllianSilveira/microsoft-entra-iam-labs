@@ -19,7 +19,7 @@ Para iniciar o processo de implementação de credenciais modernas, deve-se aces
 4. No **Menu de Navegação Secundária** (painel interno à esquerda), selecione a opção **Políticas**.
 5. No **Painel de Conteúdo Principal** (*Workspace*), localize a lista de métodos incorporados e selecione **Chave de acesso (FIDO2)**.
 
-![Painel de Políticas de Métodos de Autenticação](menu-fido2.png)
+![Painel de Políticas de Métodos de Autenticação](./images/menu-fido2.png)
 *Legenda: Localização exata da política de Chave de Acesso (FIDO2) dentro do gerenciamento do Microsoft Entra ID.*
 
 ---
@@ -32,7 +32,7 @@ A seleção do público-alvo deve priorizar a proteção de contas privilegiadas
 
 Para este laboratório, validou-se a funcionalidade isolando o escopo no grupo de testes `grp-pilot-passwordless-fido2`.
 
-![Membros do Grupo de Piloto](grupo-piloto.png)
+![Membros do Grupo de Piloto](./images/grupo-piloto.png)
 *Legenda: Grupo de segurança criado no Entra ID com escopo delimitado e conta nativa ativa para a validação do piloto.*
 
 ---
@@ -48,5 +48,5 @@ Posteriormente, utilizou-se a opção **Adicionar perfil** para estabelecer as r
 *   **Tipos de chave de acesso:** Selecionou-se a opção **Device-bound** (vinculada ao dispositivo). O objetivo técnico desta imposição é assegurar que a credencial criptográfica gerada permaneça isolada estritamente no hardware físico (como uma YubiKey), mitigando o risco de o colaborador exportar, copiar ou sincronizar essa chave privada para repositórios de nuvem pessoal (como Apple iCloud ou Google Password Manager).
 *   **AAGUID específicos de destino:** Esta opção foi mantida desmarcada. A justificativa técnica para este cenário de laboratório é permitir a validação e o uso de chaves de segurança de múltiplos fabricantes, desde que sejam homologadas pela *FIDO Alliance*. Em um cenário corporativo de produção com restrições severas, este controle seria ativado inserindo os códigos AAGUID (*Authenticator Attestation Global Unique Identifier*) para restringir os registros a marcas ou modelos específicos (ex: aceitar exclusivamente modelos específicos da Yubico).
 
-![Configurações Avançadas do Perfil FIDO2](perfil-fido2.png)
+![Configurações Avançadas do Perfil FIDO2](./images/perfil-fido2.png)
 *Legenda: Detalhes das restrições e propriedades de hardware aplicadas no perfil de chaves corporativas.*
