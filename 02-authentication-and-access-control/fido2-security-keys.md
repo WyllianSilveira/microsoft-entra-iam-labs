@@ -44,8 +44,8 @@ Na página de definições de chave de acesso (FIDO2), a opção **Permitir conf
 Posteriormente, utilizou-se a opção **Adicionar perfil** para estabelecer as regras específicas de hardware da organização, configuradas conforme os critérios técnicos abaixo:
 
 *   **Nome:** Definido como `Perfil de Chaves Corporativas` para identificação da política no locatário.
-*   **Impor atestado (*Enforce attestation*):** Esta opção foi marcada para que o Microsoft Entra ID verifique a autenticidade e a procedência da chave física de segurança antes de permitir o cadastro. O processo utiliza o certificado digital de fábrica embutido no hardware para validar que o dispositivo é legítimo e homologado pela *FIDO Alliance*, impedindo o uso de emuladores de software ou tokens clonados e não autorizados.
-*   **Tipos de chave de acesso:** Selecionou-se a opção **Device-bound** (vinculada ao dispositivo). O objetivo técnico desta imposição é assegurar que a credencial criptográfica gerada permaneça isolada estritamente no hardware físico (como uma YubiKey), mitigando o risco de o colaborador exportar, copiar ou sincronizar essa chave privada para repositórios de nuvem pessoal (como Apple iCloud ou Google Password Manager).
+*   **Impor atestado (*Enforce attestation*):** exige que o autenticador apresente informações de atestado válidas para que o Microsoft Entra ID possa validar sua procedência e compatibilidade com os requisitos de segurança definidos para o locatário. Isso permite restringir o registro a autenticadores reconhecidos e compatíveis com os requisitos de atestado do Entra ID..
+*   **Tipos de chave de acesso:** Selecionou-se a opção **Device-bound** (vinculada ao dispositivo). a credencial fica vinculada ao autenticador no qual foi criada e não é sincronizada entre dispositivos. No caso de uma chave de segurança FIDO2 física, a chave privada permanece protegida no próprio autenticador.
 *   **AAGUID específicos de destino:** Esta opção foi mantida desmarcada. A justificativa técnica para este cenário de laboratório é permitir a validação e o uso de chaves de segurança de múltiplos fabricantes, desde que sejam homologadas pela *FIDO Alliance*. Em um cenário corporativo de produção com restrições severas, este controle seria ativado inserindo os códigos AAGUID (*Authenticator Attestation Global Unique Identifier*) para restringir os registros a marcas ou modelos específicos (ex: aceitar exclusivamente modelos específicos da Yubico).
 
 ![Configurações Avançadas do Perfil FIDO2](./images/perfil-fido2.png)
@@ -63,7 +63,7 @@ Após a propagação da política pelo administrador, o fluxo de registro self-s
 4. Na janela suspensa que for exibida, selecione a opção **Token de hardware** (*Hardware token*) e clique em **Avançar** (*Next*).
 5. Na tela seguinte, o assistente solicitará os dados de identificação do dispositivo; digite o **Número de série** do token físico e clique em **Avançar**.
 6. Insira um nome descritivo para o dispositivo (ex: `Token Corporativo MFA`) para facilitar auditorias futuras e clique em **Avançar**.
-7. Na etapa de validação criptográfica, pressione o botão físico do token para gerar o código temporário de uso único (OTP), insira os dígitos gerados no campo correspondente na tela e clique em **Avançar** para concluir a configuração.
+7. Na etapa de validação criptográfica, pressione o botão físico do token para gerar o código temporário de uso único, insira os dígitos gerados no campo correspondente na tela e clique em **Avançar** para concluir a configuração.
 8. Após o provisionamento bem-sucedido, localize a opção **Alterar** (*Change*) ao lado do método de entrada padrão no topo do Painel de Conteúdo Principal.
 9. Modifique o método de autenticação padrão da conta para **Autenticação baseada em aplicativo ou token de hardware - código**, garantindo que as próximas solicitações de logon exijam prioritariamente o fator de segurança físico.
 
